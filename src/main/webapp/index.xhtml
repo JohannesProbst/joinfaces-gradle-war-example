@@ -10,7 +10,11 @@
     </h:head>
 
     <h:body>
-        <h:outputText value="#{dummy.text}" />
+        <h:outputText value="#{dummy.text}" /> -
+        <h:outputText value="#{dummy.hashCode()}" />
+        <br/>
+        <h:outputText value="#{dummyView.text}" /> -
+        <h:outputText value="#{dummyView.hashCode()}" />
     </h:body>
 </f:view>
 </html>
