@@ -2,10 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core">
+      xmlns:f="jakarta.faces.core"
+      xml:lang="de">
 
 <f:view>
     <h:head>
+        <title>Example</title>
         <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
     </h:head>
 
@@ -15,6 +17,14 @@
         <br/>
         <h:outputText value="#{dummyView.text}" /> -
         <h:outputText value="#{dummyView.hashCode()}" />
+
+        <h:form>
+            <h:inputText converter="exampleConverter" />
+            <h:commandButton value="Submit">
+                <f:ajax execute="@form" render="@form" />
+            </h:commandButton>
+            <h:messages />
+        </h:form>
     </h:body>
 </f:view>
 </html>
